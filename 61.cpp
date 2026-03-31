@@ -16,7 +16,7 @@ int main(){
     }
 
     string s2="";
-    for(i=0;i<flag;i++){
+    for(i=0;i<=flag;i++){
         s2+=s1[i];
     }
     s2=s2+"***";
