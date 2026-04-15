@@ -3,34 +3,34 @@
 #include<cmath>
 using namespace std;
 
-class complex {
+class Complex {
 private:
     double real;
     double imaginary;
 
 public:
-    complex(double r = 0, double i = 0) {
+    Complex(double r = 0, double i = 0) {
         real = r;
         imaginary = i;
     }
 
-    complex operator+(const complex& other) const {
-        return complex(real + other.real, imaginary + other.imaginary);
+    Complex operator+(const Complex& other) const {
+        return Complex(real + other.real, imaginary + other.imaginary);
     }
 
-    complex operator-(const complex& other) const {
-        return complex(real - other.real, imaginary - other.imaginary);
+    Complex operator-(const Complex& other) const {
+        return Complex(real - other.real, imaginary - other.imaginary);
     }
 
-    bool operator==(const complex& other) const {
+    bool operator==(const Complex& other) const {
         return (real == other.real && imaginary == other.imaginary);
     }
 
-    bool operator!=(const complex& other) const {
+    bool operator!=(const Complex& other) const {
         return (real != other.real || imaginary != other.imaginary);
     }
 
-    bool operator<(const complex& other) const {
+    bool operator<(const Complex& other) const {
         if (imaginary != 0 || other.imaginary != 0) {
             double mod1 = sqrt(real * real + imaginary * imaginary);
             double mod2 = sqrt(other.real * other.real + other.imaginary * other.imaginary);
@@ -40,7 +40,7 @@ public:
         }
     }
 
-    bool operator>(const complex& other) const {
+    bool operator>(const Complex& other) const {
         if (imaginary != 0 || other.imaginary != 0) {
             double mod1 = sqrt(real * real + imaginary * imaginary);
             double mod2 = sqrt(other.real * other.real + other.imaginary * other.imaginary);
@@ -67,7 +67,7 @@ public:
     }
 };
 
-istream& operator>>(istream& is, complex& c) {
+istream& operator>>(istream& is, Complex& c) {
     double real, imag;
     char c1, c2;
     is >> real >> c1 >> imag >> c2;
@@ -79,7 +79,7 @@ istream& operator>>(istream& is, complex& c) {
     return is;
 }
 
-ostream& operator<<(ostream& os, const complex& c) {
+ostream& operator<<(ostream& os, const Complex& c) {
     os << fixed << setprecision(2);
     if (c.getImag() >= 0) {
         os << c.getReal() << "+" << c.getImag() << "i";
@@ -91,7 +91,7 @@ ostream& operator<<(ostream& os, const complex& c) {
 
 int main()
 {
-    complex c1, c2, c3, c4, c5;
+    Complex c1, c2, c3, c4, c5;
     cin >> c1 >> c2;
     c3 = c1 + c2;
     c4 = c1 - c2;
