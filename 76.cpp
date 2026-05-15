@@ -1,6 +1,7 @@
-#include<iostream>
-#include<iomanip>
-#include<cmath>
+#include<bits/stdc++.h>
+// #include<iostream>
+// #include<iomanip>
+// #include<cmath>
 using namespace std;
 
 class Complex {
